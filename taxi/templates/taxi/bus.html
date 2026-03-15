@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+<!--  <link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+<!--  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+<!--{% endblock %}-->
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/bus.jpeg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!-- <h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>
+    <p class="lead">Reliable. Comfortable. On Time.</p> -->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/bus1.jpeg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Luxury on Wheels: Premium Charter Bus Rentals for Groups by Columbia Transportation</h3>
+      <p>Planning and organizing transportation for an entire group trip or gathering can be time-consuming and exhausting. Columbia Transportation makes trip planning less tiresome by providing luxurious Charter bus rentals with state-of-the-art buses for corporate retreats, wedding parties, state travels, city tours, and family reunions. Imagine traveling together comfortably, in Luxury motor coach rentals that provide ample space and amenities, driven by professional drivers dedicated to making your journey comfortable. We make your group travel experience effortless between BWI , IAD and DCA airports. All this while catering specifically for every individual client with Tailored charter bus rentals specifically for them.</p>
+      <p>Our Fleet is dedicated to serving Washington D.C, Baltimore, Maryland, Virginia, and the rest of the country. Columbia Transportation offers a diversified fleet, perfect for any size group with utmost comfort and style. Our Coach Buses are great for big groups and corporate events because they seat up to 56 passengers. Our Executive Mini buses are designed for mid-size groups that seat 27 people perfectly. The smaller parties would prefer our Mercedes executive sprinters, which seat 12 people comfortably, or the Jet Sprinter, which can seat 8 Passengers in comfort. All these vehicles are equipped with modern amenities to make for a pleasant journey regardless of distance.</p>
+    </div>
+  </div>
+
+  <!-- Section 2 (Reverse) -->
+  <div class="row align-items-center mb-5 service-section flex-md-row-reverse" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+    <div class="col-md-6">
+      <img src="{% static 'img/bus1.jpeg' %}" class="img-fluid service-img" alt="Hourly Charter" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>A Bus for Every Occasion: Where Luxury Meets Versatility!</h3>
+      <p>Charter Bus Rentals for Out-of-State Travels. Are you looking for out-of-state travel transportation service? Choose Columbia Transportation for Reliable and comfortable charter bus rentals. Whether you’re planning a group trip, school outing, or a family reunion, our 56-passenger motorcoach and 27-passenger motorcoach options are perfect for your needs. Now you can easily travel together in style and convenience to neighboring states like Pennsylvania, New Jersey, North Carolina, or Ohio. Our charter buses ensure a smooth ride with spacious seating, ample luggage storage, and professional drivers who prioritize safety and comfort. Sit back, relax in our Luxurious coaches, and let us take you where you need to go.</p>
+      <p>Group Sightseeing City Tours. For families and friends, our Washington D.C bus charter rentals offer the best starting point for a day of discovery. Use our Minibuses for internal D.C. tours as you explore iconic destinations like The White House and Tidal Basin. We also offer our Best coach buses for large groups going for Baltimore city tours. Go to the Baltimore Museum of Art and explore the history as well as enjoy the scenic beauty of Fell’s Point without the driving or transportation tensions. Onboard amenities such as reclining seats, air-conditioning, and Wi-Fi make your sightseeing adventure just as enjoyable as visiting these iconic destinations.</p>
+      <p>Family Gatherings and Celebrations. Connection is what family reunions are all about. With our Charter bus service, the trip becomes part of the celebration itself. Imagine your loved ones laughing, sharing stories, and making memories on the road to the Chesapeake Bay..</p>
+    </div>
+  </div>
+
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href="{% url 'reservation' %}" class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}

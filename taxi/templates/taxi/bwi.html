@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Banner -->
+<div class="container-fluid p-0">
+    <div class="position-relative">
+        <img src="{% static 'img/bwi.jpeg' %}" class="img-fluid w-100" alt="BWI Shuttle Banner">
+        <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+            <!--<h1 class="display-4 fw-bold">BWI Transportation Service & BWI Limo Service</h1>-->
+            <!--<p class="lead">Reliable BWI Airport Transportation</p>-->
+        </div>
+    </div>
+</div>
+
+
+<!-- Main Content -->
+<div class="container my-5">
+
+    <div class="row mb-5 align-items-center">
+        <div class="col-md-6">
+            <h2 class="fw-bold">Best BWI Airport Transportation Service</h2>
+            <p>Looking for the best BWI {% url 'reservation' %}? Columbia Transportation is your top choice for dependable, safe, and timely transportation. Whether you need a BWI for corporate travel, airport transfer, or leisure, our professional chauffeurs and well-maintained vehicles ensure a smooth ride.</p>
+            <p>With advanced reservation, our BWI airport are ready to pick you up on time from your home, hotel, or office. We understand the importance of time and provide punctual service every time.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'img/bwi1.jpeg' %}" class="img-fluid rounded shadow" alt="BWI Shuttle Service">
+        </div>
+    </div>
+
+    <div class="row mb-5 align-items-center flex-md-row-reverse">
+        <div class="col-md-6">
+            <h2 class="fw-bold">Professional BWI Limo Service</h2>
+            <p>Travel in style with our luxury BWI limo service. We offer professional limousine services to BWI Airport for those looking for sophistication and elegance in transportation. Whether it’s a business meeting, special event, or simple airport transfer, arrive in comfort and class.</p>
+            <p>Our fleet features modern, high-end vehicles driven by experienced chauffeurs ensuring privacy, safety, and style.</p>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'img/bwi2.jpeg' %}" class="img-fluid rounded shadow" alt="BWI Limo Service">
+        </div>
+    </div>
+
+    <div class="row mb-5 align-items-center">
+        <div class="col-md-6">
+            <h2 class="fw-bold">Why Choose Us for BWI Transportation?</h2>
+            <ul class="list-unstyled">
+                <li>✅ Reliable & Punctual Service</li>
+                <li>✅ Experienced Professional Chauffeurs</li>
+                <li>✅ Clean, Comfortable & Safe Vehicles</li>
+                <li>✅ Competitive Pricing</li>
+                <li>✅ 24/7 Customer Support</li>
+            </ul>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'img/bwi3.jpeg' %}" class="img-fluid rounded shadow" alt="Why Choose Us">
+        </div>
+    </div>
+
+</div>
+
+<!-- CTA -->
+<div class="container-fluid bg-light text-white text-center py-5">
+    <h2 class="mb-3">Book Your BWI Airport Transportation Now</h2>
+    <a href="{% url 'reservation' %}" class="btn btn-light px-5 py-2">Reserve Now</a>
+</div>
+
+{% endblock %}

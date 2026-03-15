@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+  <!--<link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+  <!--<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/bac.jpeg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!-- <h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>
+    <p class="lead">Reliable. Comfortable. On Time.</p> -->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/bach3.jpeg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Columbia Transportation Bachelor Party Limo Services | Kick Off in Style & Luxury</h3>
+      <p>Planning the ultimate bachelor party? Let Columbia Transportation take your celebration to the next level with our Bachelor Party Limo Services. Imagine cruising through the bustling streets of Washington D.C, Virginia or Maryland in a sleek limousine, surrounded by your closest friends, with the night full of possibilities. Whether you are hitting the top bars in Adams Morgan or exploring the nightlife of Dupont Circle, or maybe heading to a high-energy club, Columbia Transportation guarantees you arrive in style and comfort.</p>
+      <p>Our Bachelor party limo service blends luxury, fun, and safety together, ensuring all details are covered for that big night. Whether heading to The Wharf to enjoy its nightlife or Brewery tours in Virginia, we have a Bachelor party limo Washington DC service that ensures you travel in comfort and style.The moment you step in our luxury vehicles, you are in control to make multiple stops as well as visiting multiple destinations of your choice.</p>
+      <p>You can party all night with our luxury Fleet of Party buses, Suvs, Sedans, and Stretch limos. Treat yourself to upscale amenities, such as comfortable leather seats, colorful LED lighting, high-end sound systems, and fully stocked bars, which get you in the mood for a night of celebration. Our Washington DC bachelor party transportation is great for big groups because the interiors are spacious, with enough room for everyone to get in on the action. You can also use our elegant Hourly limo services also, to travel in luxury and comfort all night enjoying your bachelor night to the fullest.</p>
+    </div>
+  </div>
+
+  <!-- Section 2 (Reverse) -->
+  <div class="row align-items-center mb-5 service-section flex-md-row-reverse" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+    <div class="col-md-6">
+      <img src="{% static 'img/bach2.jpeg' %}" class="img-fluid service-img" alt="Hourly Charter" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Experience Top-Tier Amenities For Your Bachelor Party.</h3>
+      <p>Planning the ultimate celebration? Our bachelor party limo service DMV area ensures a seamless experience, thanks to our professional chauffeurs. Their expertise and local knowledge guarantee a smooth ride, letting you focus on the party. Whether you're hopping between clubs in Baltimore or visiting Upscale lounges in Washington D.C, our chauffeurs handle every detail, including flexible stops and timely pickups.</p>
+      <p>that's VIP all the way. Traveling with a big group? Our limousines come with a Fully stocked bar, providing complimentary beverages to keep everyone refreshed throughout the journey. It's the perfect way to get the party started before you even arrive at your destination. Try our Bachelor party bus rental and have a mobile party with all the luxury of a high-end venue.</p>
+  </div>
+
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href="{% url 'reservation' %}" class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}

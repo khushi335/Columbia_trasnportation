@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+  <!--<link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+  <!--<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/group2.jpeg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!-- <h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>
+    <p class="lead">Reliable. Comfortable. On Time.</p> -->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/group2.jpeg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Make Your Trips Worthwhile with Columbia Transportation Group Transport</h3>
+      <p>Be ready to enjoy the spacious luxury with Columbia Transportation Premium group transportation services, offering an unmatched experience for Group transportation in the DMV area. Whether you’re traveling for business, a family trip, school/college trip, sports event, or a social gathering, our Sprinter Vans for group transportation service is designed to elevate your journey. We are also here to make your airport commute comfortable across BWI , IAD and DCA airports. Enjoy ample room to relax while traveling seamlessly between Baltimore,Washington D.C,Virginia,Maryland and beyond.</p>
+      <p>Our extensive and commodious Fleet helps your team unwind, connect, and actually have fun with each other on route. Columbia Transportation maintains a fleet of vehicles of all sizes, ideal for group transportation, including a Spacious Charter Bus, High-end Sprinter vans, Mercedes luxury vans for large groups, and Comfortable Minibuses. All equipped with modern amenities in order to ensure a safe and smooth journey. Our experienced chauffeurs are highly qualified, courteous, and serious about providing safe, prompt, and hassle-free service to make every group's trip enjoyable and memorable.</p>
+      <p>Well-guided trips to DC mean you no longer have to fret over getting a cab or worry about planning the rest of the trip on your own. We allow you to feel as much comfortable and safe as you want to. Traveling with a group of people add excitement to your trip, and you get a chance to socialize with people from different backgrounds and ethnicities. We give topmost priority to our clients and strive to provide the best hands-on experience and organized system to you. Apart from group transportation, Columbia Transportation provides you with an array of services suited to your needs. Corporate travel, elegant Wedding transportation, Hourly limo rentals, City tours, and Party rides, all in all, our vehicles and professional drivers cater to every situation. It could be for a corporate meeting, or maybe some celebratory event, or it's just that night out. With our reliable yet affordable service, we assure that your travels are just as special as your destination. Contact us now to book our worldwide group transportation services.</p>
+    </div>
+  </div>
+
+  <!-- Section 2 (Reverse) -->
+  <div class="row align-items-center mb-5 service-section flex-md-row-reverse" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+    <div class="col-md-6">
+      <img src="{% static 'img/group.jpeg' %}" class="img-fluid service-img" alt="Hourly Charter" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Columbia Transportation Group Transportation Services: Convenient For Every Occasion</h3>
+      <p>Every year, thousands of passengers travel to Washington D.C, Maryland, and Virginia for tourism, work, or educational purposes. Columbia Transportation offers you the rich history and vibrant culture of these cities in comfort and style with its affordable group transportation services. You can be sure that you will enjoy the city trips without breaking the bank due to our affordable fares.</p>
+      <p>Sporting Events Transportation: You want to focus on the game and not the transportation for the sporting events, our Best group transportation in Baltimore is your ticket. Our Buses, or sprinter vans can cater big groups easily, and give them a comfortable ride for big sporting venues like Capital One Arena or FedExField. We can take you in comfort to the Audi Field Stadium, Northwest Commanders Stadium or even Pimlico Race Course if you are a fan of horse racing events.</p>
+      <p>School and College Transportation: Our Group transportation services for school and college ensure that the students travel safely and comfortably to and from school, field trips, and events. We are here to give you a great tour of all the notable institutions like American University and George Washington University. You can book our Sprinter vans services and Minibuses for your safe school transportation.</p>
+    </div>
+  </div>
+
+
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href="{% url 'reservation' %}" class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}

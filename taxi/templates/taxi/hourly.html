@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+  <!--<link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+  <!--<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/ban.jpg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!-- <h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>
+    <p class="lead">Reliable. Comfortable. On Time.</p> -->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/hou.jpg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Experience Effortless Elegance with Our Premier Hourly Limo Service</h3>
+      <p>In the thriving area of DMV, the pace of life often becomes overwhelming, so finding the moments of comfort and luxury while travelling can be a rare treasure. Now, you can have it by using the best Baltimore hourly limo service.</p>
+      <p>Columbia Transportation Hourly limo service is for those who enjoy efficiency, comfort, and flexibility. Whether it's for one hour or a full day, you're in complete control. As soon as you step into one of our premium vehicles, your journey becomes a tailored experience and absolutely stress-free. Forget the rigidity of schedules and hassle of hailing cabs; our Professional chauffeurs work according to your plans, not the other way round.</p>
+      <p>Our Fleet offers a dynamic variety of luxury Limousines, Sedans, Suvs, and Motorcoaches to cater for one traveler, families, and big groups. Whether you need our Hourly car rental service in Baltimore for a business trip or just a fun day with family, your ride will be provided by a professional driver with in-depth knowledge of the DMV area, thereby guaranteeing smooth travel with on-time arrivals. Whatever the occasion is, with Columbia Transportation, you are bound to have just what you need to make your trip unforgettable.</p>
+    </div>
+  </div>
+
+  <!-- Section 2 (Reverse) -->
+  <div class="row align-items-center mb-5 service-section flex-md-row-reverse" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+    <div class="col-md-6">
+      <img src="{% static 'img/hou2.jpg' %}" class="img-fluid service-img" alt="Hourly Charter" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Hourly luxurious Sedan car services.</h3>
+      <p>Are you planning an evening in Dupont Circle, Georgetown, or The Gibson? Our Night-out limo services promise convenience and luxury, letting you focus on the fun. Our hourly limo service is the safest option for your night outs in style. Whether it’s your Bachelor or Bachelorette party with a night at The Wharf, or you are going to the Wolf Trap National Park, or 9:30 Club for attending a concert; or just hanging out at the The Gibson, or The Whiskey Jar - we have got you covered with our Hourly luxurious Sedan car services.</p>
+      <p>Apart from the Reliable limo services that run by the hour, we offer other high-tier transportation services. We strive to address all your distinctive needs by providing Point-to-point transfer rides that safely take you between two set locations so you arrive smoothly at your destination.</p>
+      <p>Our premium vehicles have plush leather seating, ambient LED lighting, and a state-of-the-art sound system to set the perfect vibe for your night out. You can also enjoy our complimentary beverages, climate control, and spacious interiors designed for your comfort. Do it all while staying connected with built-in Wi-Fi and charging ports.</p>
+    </div>
+  </div>
+
+
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href="{% url 'reservation' %}" class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}

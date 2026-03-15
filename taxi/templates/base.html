@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Columbia - Car Booking{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pO2X6f6Zkk1Bkp8yOcV0n+82lZ3Dj2+FQi7IB2E1ZbFv2r0M8M6eS4gWwXJxejHnUlXYtH5YV3ycezA82rMkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Libraries Stylesheets -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/point_to_point.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bwi.css' %}" rel="stylesheet">
+    <link href="{% static 'css/dca.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fleet.css' %}" rel="stylesheet">
+    <!--<link href="{% static 'css/reservation.css' %}" rel="stylesheet"> -->
+    {% block extra_head %}{% endblock %}
+    
+    <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
+
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    
+    <!-- Topbar Start -->
+<div class="container-fluid bg-secondary d-none d-xl-block w-100">
+    <div class="container">
+        <div class="row gx-0 align-items-center" style="height: 60px;">
+            <!-- Contact Info -->
+            <!--<div class="col-lg-6 d-flex flex-wrap justify-content-start">-->
+            <!--    <a href="#" class="topbar-link me-4"><i class="fas fa-map-marker-alt"></i>9019 Early April Way</a>-->
+            <!--    <a href="tel:+(410) 365-5556" class="topbar-link me-4"><i class="fas fa-phone-alt"></i>+(410) 365-5556</a>-->
+            <!--    <a href="mailto:chriskbonsu@gmail.com" class="topbar-link"><i class="fas fa-envelope"></i>chriskbonsu@gmail.com</a>-->
+            <!--</div>-->
+            <!-- Contact Info -->
+            <div class="col-lg-6 d-flex justify-content-start contact-info">
+                <a href="#" class="topbar-link"><i class="fas fa-map-marker-alt"></i>9019 Early April Way</a>
+                <a href="tel:(410) 365-5556" class="topbar-link"><i class="fas fa-phone-alt"></i>(410) 365-5556</a>
+                <a href="mailto:chriskbonsu@gmail.com" class="topbar-link"><i class="fas fa-envelope"></i>chriskbonsu@gmail.com</a>
+            </div>
+
+
+            <!-- Social Icons -->
+            <div class="col-lg-6 d-flex justify-content-end">
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar End -->
+
+    <!-- Navbar Start -->
+<!--<div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0 shadow-sm" -->
+<!--     style="background-color: #000 !important; color: #fff !important;">-->
+<!--  <div class="container">-->
+<!--    <nav class="navbar navbar-expand-lg" style="background-color: #000 !important; color: #fff !important;">-->
+      
+<!--      <a href="{% url 'index' %}" class="navbar-brand" style="color: #fff !important;">-->
+<!--        <img src="{% static 'img/anna__1_-removebg-preview.png' %}" -->
+<!--             alt="Columbia Transportation Logo" -->
+<!--             class="img-fluid" -->
+<!--             style="max-height: 80px;">-->
+<!--      </a>-->
+
+      <!-- Toggler -->
+<!--      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" -->
+<!--              style="border-color: #fff !important; color: #fff !important;">-->
+<!--        <span class="fa fa-bars"></span>-->
+<!--      </button>-->
+
+      <!-- Nav Links -->
+<!--      <div class="collapse navbar-collapse" id="navbarCollapse">-->
+<!--        <div class="navbar-nav mx-auto py-0">-->
+<!--          <a href="{% url 'index' %}" class="nav-item nav-link active" style="color: #fff !important;">Home</a>-->
+<!--          <a href="{% url 'about' %}" class="nav-item nav-link" style="color: #fff !important;">About</a>-->
+          
+<!--          <div class="nav-item dropdown">-->
+<!--            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: #fff !important;">Service</a>-->
+<!--            <div class="dropdown-menu m-0" style="background-color: #000 !important; color: #fff !important;">-->
+<!--              <a href="{% url 'point_to_point_service' %}" class="dropdown-item" style="color: #fff !important;">POINT TO POINT LIMO SERVICE</a>-->
+<!--              <a href="{% url 'airport_transportation' %}" class="dropdown-item" style="color: #fff !important;">AIRPORT TRANSPORTATION</a>-->
+<!--              <a href="{% url 'van' %}" class="dropdown-item" style="color: #fff !important;">VAN OR EXCLUSIVE SHUTTLES SERVICE</a>-->
+<!--              <a href="{% url 'hourly' %}" class="dropdown-item" style="color: #fff !important;">HOURLY LIMO SERVICE</a>-->
+<!--              <a href="{% url 'corporate' %}" class="dropdown-item" style="color: #fff !important;">CORPORATE TRANSPORTATION SERVICE</a>-->
+<!--              <a href="{% url 'wine' %}" class="dropdown-item" style="color: #fff !important;">WINERY & CITY HOURS</a>-->
+<!--              <a href="{% url 'group' %}" class="dropdown-item" style="color: #fff !important;">GROUP TRANSPORTATION</a>-->
+<!--              <a href="{% url 'private' %}" class="dropdown-item" style="color: #fff !important;">PRIVATE SCHOOL BUS SERVICE</a>-->
+<!--              <a href="{% url 'bachelor' %}" class="dropdown-item" style="color: #fff !important;">BACHELOR/ETTE PARTY LIMO SERVICE</a>-->
+<!--              <a href="{% url 'wedding' %}" class="dropdown-item" style="color: #fff !important;">WEDDING SPECIAL</a>-->
+<!--              <a href="{% url 'bus' %}" class="dropdown-item" style="color: #fff !important;">BUS CHARTER | RENTAL</a>-->
+<!--              <a href="{% url 'exotic' %}" class="dropdown-item" style="color: #fff !important;">EXOTIC CAR RENTAL</a>-->
+<!--            </div>-->
+<!--          </div>-->
+          
+<!--          <div class="nav-item dropdown">-->
+<!--            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" style="color: #fff !important;">Airport</a>-->
+<!--            <div class="dropdown-menu m-0" style="background-color: #000 !important; color: #fff !important;">-->
+<!--              <a href="{% url 'bwi' %}" class="dropdown-item" style="color: #fff !important;">BWI- BALTIMORE WASHINGTON INTERNATIONAL</a>-->
+<!--              <a href="{% url 'dca' %}" class="dropdown-item" style="color: #fff !important;">DCA- RONALD REAGAN NATIONAL AIRPORT</a>-->
+<!--              <a href="{% url 'iad' %}" class="dropdown-item" style="color: #fff !important;">IAD- WASHINGTON DULLES INTERNATIONAL</a>-->
+<!--              <a href="{% url 'phl' %}" class="dropdown-item" style="color: #fff !important;">PHL- PHILADELPHIA INTERNATIONAL</a>-->
+<!--            </div>-->
+<!--          </div>-->
+          
+<!--          <a href="{% url 'fleet' %}" class="nav-item nav-link" style="color: #fff !important;">Fleet</a>-->
+<!--          <a href="{% url 'reservation' %}" class="nav-item nav-link" style="color: #fff !important;">Reservation</a>-->
+<!--          <a href="{% url 'contact' %}" class="nav-item nav-link" style="color: #fff !important;">Contact</a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </nav>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container-fluid nav-bar sticky-top px-0 px-lg-4 py-2 py-lg-0 shadow-sm">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+
+      <!-- Brand -->
+      <a href="{% url 'index' %}" class="navbar-brand">
+        <img src="{% static 'img/anna__1_-removebg-preview.png' %}" 
+             alt="Columbia Transportation Logo" 
+             class="img-fluid" 
+             style="max-height: 80px;">
+      </a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="fa fa-bars" style="color: #fff;"></span>
+      </button>
+
+      <!-- Nav Links -->
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav mx-auto py-0">
+
+          <a href="{% url 'index' %}" class="nav-item nav-link active">Home</a>
+          <a href="{% url 'about' %}" class="nav-item nav-link">About</a>
+          
+          <!-- Service Dropdown -->
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
+            <div class="dropdown-menu m-0">
+              <a href="{% url 'point_to_point_service' %}" class="dropdown-item">POINT TO POINT LIMO SERVICE</a>
+              <a href="{% url 'airport_transportation' %}" class="dropdown-item">AIRPORT TRANSPORTATION</a>
+              <a href="{% url 'van' %}" class="dropdown-item">VAN OR EXCLUSIVE SHUTTLES SERVICE</a>
+              <a href="{% url 'hourly' %}" class="dropdown-item">HOURLY LIMO SERVICE</a>
+              <a href="{% url 'corporate' %}" class="dropdown-item">CORPORATE TRANSPORTATION SERVICE</a>
+              <a href="{% url 'wine' %}" class="dropdown-item">WINERY & CITY HOURS</a>
+              <a href="{% url 'group' %}" class="dropdown-item">GROUP TRANSPORTATION</a>
+              <a href="{% url 'private' %}" class="dropdown-item">PRIVATE SCHOOL BUS SERVICE</a>
+              <a href="{% url 'bachelor' %}" class="dropdown-item">BACHELOR/ETTE PARTY LIMO SERVICE</a>
+              <a href="{% url 'wedding' %}" class="dropdown-item">WEDDING SPECIAL</a>
+              <a href="{% url 'bus' %}" class="dropdown-item">BUS CHARTER | RENTAL</a>
+              <a href="{% url 'exotic' %}" class="dropdown-item">EXOTIC CAR RENTAL</a>
+            </div>
+          </div>
+          
+          <!-- Airport Dropdown -->
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Airport</a>
+            <div class="dropdown-menu m-0">
+              <a href="{% url 'bwi' %}" class="dropdown-item">BWI- BALTIMORE WASHINGTON INTERNATIONAL</a>
+              <a href="{% url 'dca' %}" class="dropdown-item">DCA- RONALD REAGAN NATIONAL AIRPORT</a>
+              <a href="{% url 'iad' %}" class="dropdown-item">IAD- WASHINGTON DULLES INTERNATIONAL</a>
+              <a href="{% url 'phl' %}" class="dropdown-item">PHL- PHILADELPHIA INTERNATIONAL</a>
+            </div>
+          </div>
+          
+          <a href="{% url 'fleet' %}" class="nav-item nav-link">Fleet</a>
+          <a href="{% url 'reservation' %}" class="nav-item nav-link">Reservation</a>
+          <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+    <!-- Navbar End -->
+
+    <!-- Main Content -->
+    <main class="site-content container">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <!-- Main Content End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5">
+    <div class="container py-5">
+        <div class="row g-5">
+
+            <!-- About -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="footer-title mb-4">Columbia Transportation</h4>
+                    <p>We make sure that your every trip is comfortable</p>
+                    <div class="position-relative mt-3">
+                        <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                        <button type="button" class="btn subscribe-btn rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="footer-title mb-4">Quick Links</h4>
+                    <a href="{% url 'about' %}"><i class="fas fa-angle-right me-2"></i> About</a>
+                    <a href="{% url 'fleet' %}"><i class="fas fa-angle-right me-2"></i> Cars</a>
+                    <a href="{% url 'contact' %}"><i class="fas fa-angle-right me-2"></i> Contact Us</a>
+                    <a href="#"><i class="fas fa-angle-right me-2"></i> Terms & Conditions</a>
+                </div>
+            </div>
+
+            <!-- Business Hours -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="footer-title mb-4">Business Hours</h4>
+                    <div class="mb-2"><h6 class="text-light mb-0">Mon - Fri:</h6><p class="mb-0">09:00 am - 07:00 pm</p></div>
+                    <div class="mb-2"><h6 class="text-light mb-0">Saturday:</h6><p class="mb-0">10:00 am - 05:00 pm</p></div>
+                    <div class="mb-2"><h6 class="text-light mb-0">Vacation:</h6><p class="mb-0">All Sunday</p></div>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-6 col-lg-6 col-xl-3">
+                <div class="footer-item d-flex flex-column">
+                    <h4 class="footer-title mb-4">Contact Info</h4>
+                    <a href="#"><i class="fa fa-map-marker-alt me-2"></i>9019 Early April Way</a>
+                    <a href="mailto:info@example.com"><i class="fas fa-envelope me-2"></i>chriskbonsu@gmail.com</a>
+                    <a href="tel:(410)365-5556"><i class="fas fa-phone me-2"></i>(410) 365-5556</a>
+                    <div class="d-flex mt-3 social-icons">
+                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Copyright -->
+<div class="container-fluid copyright py-4">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+            <div class="col-md-6 text-center text-md-start mb-md-0">
+                <span>© <a href="https://airport.columbiatransportation.com/">Columbia Transportation</a>, All rights reserved.</span>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                Designed By <a href="https://quantumcoresoftware.com/">Quantum Core Software</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Back to Top Button -->
+    <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- JS Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Owl Carousel JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<!-- Waypoints & CounterUp (if needed) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+
+<!-- Your main.js -->
+<script src="{% static 'js/main.js' %}"></script>
+
+    <!-- Main JS -->
+    <!--<script src="{% static 'js/main.js' %}"></script>-->
+    <script src="{% static 'js/booking.js' %}"></script> 
+    <script src="{% static 'js/fleet.js' %}"></script>
+    <!--<script src="{% static 'js/reservation.js' %}" defer></script>-->
+    <!--<script src="{% static 'js/main.js' %}" defer></script>-->
+    <script src="{% static 'js/reservation.js' %}" defer></script>
+
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}PHL Limo & Car Service – Philadelphia Airport Transportation{% endblock %}
+
+{% block content %}
+<section class="banner">
+  <img src="{% static 'img/phl.jpeg' %}" alt="PHL Limo Service">
+  <div class="banner-text">
+    <!--<h1>Reliable PHL Limo & Car Service – Philadelphia Airport Transportation</h1>-->
+    <a href="{% url 'reservation' %}" class="btn">Book Your Ride</a>
+  </div>
+</section>
+
+<div class="container my-5">
+  <div class="row align-items-center mb-5 service-section">
+    <div class="col-md-6">
+      <img src="{% static 'img/phl1.jpeg' %}" class="img-fluid service-img" alt="Philadelphia Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Reliable Philadelphia Airport Car Service</h3>
+      <p>Columbia Transportation’s PHL Limo & Car Service provides the most dependable and luxurious airport transportation experience in Philadelphia. Whether you’re traveling solo for business, with family, or as a group, our chauffeurs ensure timely, comfortable, and stress-free rides. Our commitment to professionalism and attention to detail makes us the preferred choice for Philadelphia International Airport transfers.</p>
+
+      <p>We understand the importance of punctuality, and our chauffeurs track flights to accommodate early arrivals or delays. Our fleet features top-of-the-line vehicles ranging from elegant sedans to spacious SUVs and vans, perfectly suited for any occasion.</p>
+    </div>
+  </div>
+</div>
+
+<section class="features container">
+  <h2>Why Choose Our Philadelphia Airport Transportation?</h2>
+  <ul>
+    <li>On-time pick-up and drop-off service guaranteed.</li>
+    <li>Professional and courteous chauffeurs with local expertise.</li>
+    <li>Wide range of luxury vehicles to meet your needs.</li>
+    <li>Easy online booking and 24/7 customer support.</li>
+  </ul>
+</section>
+
+<section class="airport-info container">
+  <h2>Philadelphia International Airport (PHL): Gateway to the City of Brotherly Love</h2>
+  <p>Philadelphia International Airport (PHL) is the primary airport serving the Philadelphia metropolitan area. With more than 30 million passengers annually, PHL offers extensive domestic and international flights. Located just 7 miles from downtown Philadelphia, it connects travelers seamlessly to the heart of the city and beyond.</p>
+
+  <p>Popular destinations accessible from PHL include historic sites such as Independence Hall, the Liberty Bell, and the Philadelphia Museum of Art. Our Philadelphia airport car service helps you navigate the city quickly and comfortably, ensuring your trip starts and ends on the right note.</p>
+</section>
+
+<section class="curbside container">
+  <h3>Convenient Curbside Pickup and Drop-off at PHL</h3>
+  <p>At AS4L, we understand how hectic airports can be. That’s why our Philadelphia limo service offers effortless curbside pickup and drop-off at all terminals. Whether you arrive at Terminal A-East, B, or F, your professional chauffeur will meet you at the curb with a personalized sign, assist with your luggage, and escort you to your vehicle.</p>
+
+  <p>Our drivers are well-versed in airport regulations and traffic patterns to ensure a smooth transition from terminal to car, saving you time and hassle.</p>
+</section>
+
+<section class="fleet container">
+  <h3>Our Fleet – Choose the Perfect Vehicle for Your Trip</h3>
+  <p>We provide a diverse fleet tailored to your specific needs:</p>
+  <ul>
+    <li>Luxury Sedans: Perfect for solo travelers or couples needing comfort and style.</li>
+    <li>Spacious SUVs: Ideal for small groups or families requiring extra luggage space.</li>
+    <li>Stretch Limousines: For special occasions, corporate events, or celebrations.</li>
+    <li>Executive Vans: Great for larger groups, accommodating up to 14 passengers comfortably.</li>
+    <li>Black Car Services: Elegant and discreet transport for VIP guests.</li>
+  </ul>
+</section>
+
+<section class="meet-greet container">
+  <h3>Personalized Meet-and-Greet Service</h3>
+  <p>Our meet-and-greet service elevates your arrival experience. Your chauffeur will wait for you at baggage claim with a customized sign, assist with luggage, and escort you to your vehicle. This personal touch guarantees a seamless and welcoming start to your journey.</p>
+</section>
+
+<section class="dmv container">
+  <h3>Airport Transfers Across Philadelphia & Surrounding Areas</h3>
+  <p>AS4L offers airport transportation services across Philadelphia and the surrounding Delaware Valley region (DMV). Whether you’re heading to downtown Philly, King of Prussia, Cherry Hill, or beyond, our PHL car service ensures timely pickups and drop-offs tailored to your schedule.</p>
+</section>
+
+<section class="shared container">
+  <h3>Shared Shuttle Services for Budget Travelers</h3>
+  <p>Looking for affordable airport transportation? Our shared shuttle service provides budget-friendly rides while maintaining comfort and reliability. Ideal for solo travelers or small groups looking to save, our shuttles connect PHL to major hotels and business districts.</p>
+</section>
+
+<section class="luxury container">
+  <h3>Luxury with Our Philadelphia Limo Service</h3>
+  <p>For those who demand the best, our luxury limo service offers sophistication and comfort. Whether attending a corporate event, wedding, or night out, our limos are equipped with premium amenities to ensure a memorable ride.</p>
+</section>
+
+<section class="private container">
+  <h3>Private Rides with PHL Sedan Service</h3>
+  <p>Need privacy and convenience? Our sedan service provides private rides with professional chauffeurs who prioritize your comfort and discretion. Perfect for business travelers and those seeking personalized service.</p>
+</section>
+
+<section class="group container">
+  <h3>Group Travel with Our PHL Van Service</h3>
+  <p>Traveling with a group? Our executive vans accommodate up to 14 passengers with ample luggage space. Ideal for corporate outings, family trips, and airport shuttles for large parties.</p>
+</section>
+
+<section class="black-car container">
+  <h3>Elegance and Comfort with PHL Black Car Service</h3>
+  <p>Our black car service offers a blend of elegance and discretion for VIP clients. Whether for business or pleasure, enjoy a luxurious ride with our professionally trained chauffeurs.</p>
+</section>
+
+<!--<section class="faq container">-->
+<!--  <h2>Frequently Asked Questions</h2>-->
+  
+<!--  <div class="faq-item">-->
+<!--    <h3>How do I book a ride with AS4L?</h3>-->
+<!--    <p>You can book your ride online through our website or by calling our 24/7 reservation line at +1 (443) 336-3333.</p>-->
+<!--  </div>-->
+  
+<!--  <div class="faq-item">-->
+<!--    <h3>Can I request specific vehicles?</h3>-->
+<!--    <p>Yes, during booking you can select the vehicle type that best suits your needs from our available fleet.</p>-->
+<!--  </div>-->
+  
+<!--  <div class="faq-item">-->
+<!--    <h3>Are the chauffeurs licensed and insured?</h3>-->
+<!--    <p>All our drivers are fully licensed, insured, and have undergone background checks and professional training.</p>-->
+<!--  </div>-->
+  
+<!--  <div class="faq-item">-->
+<!--    <h3>What happens if my flight is delayed?</h3>-->
+<!--    <p>We track your flight status in real-time and adjust pickup times accordingly to ensure no additional wait time or charges.</p>-->
+<!--  </div>-->
+  
+<!--  <div class="faq-item">-->
+<!--    <h3>Is there a cancellation fee?</h3>-->
+<!--    <p>Cancellation policies vary based on booking type. Please review the terms during your booking or contact customer service for details.</p>-->
+<!--  </div>-->
+<!--</section>-->
+
+<!--<section class="testimonials container">-->
+<!--  <h2>What Our Customers Say</h2>-->
+<!--  <blockquote>“The driver was punctual, professional, and made my airport transfer stress-free. Highly recommend AS4L!” – Jessica R.</blockquote>-->
+<!--  <blockquote>“Clean vehicles and courteous chauffeurs every time I use this service. Great experience.” – Mark T.</blockquote>-->
+<!--</section>-->
+
+<!--<section class="booking container" id="booking">-->
+<!--  <h3>Book Your Philadelphia Airport Transfer Now</h3>-->
+<!--  <p>Call us at <strong>+1 (443) 336-3333</strong> or book online for convenient, reliable service.</p>-->
+<!--</section>-->
+
+{% endblock %}

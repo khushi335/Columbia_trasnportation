@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+<!--  <link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+<!--  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+<!--{% endblock %}-->
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/1.jpg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!-- <h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>
+    <p class="lead">Reliable. Comfortable. On Time.</p> -->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/air.jpeg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Breathe Easy with Renowned Airport Limo Service Providers</h3>
+      <p>Want to find a convenient limo service or a Point-to-Point transport service? Then you are exactly at the right place. We offer you the Best point to point transportation services in the DMV. You can ride with style, comfort and elegance with Columbia Transportation Limo services. Our Fleet of Vehicles includes Full-size Sedans, Minivans, SUVs, Sprinter Vans, Buses, and Motor coaches.</p>
+      <p>Discover the beauty and charm of Baltimore, Washington D.C., Virginia and Maryland with our Premium point-to-point transportation services. Imagine gliding through historic streets like Fells Point, or CFG Bank Arena in Baltimore or arriving in style at the breathtaking National Mall in Washington DC, all while enjoying the luxury and comfort of our chauffeured limos..</p>
+      <p>We prioritize your safety first. The best part is we are 24/7 available for our users. Whether it is day or night time, just give us a Call to book your ride. We also offer last-minute or pre-scheduled rides. Our transportation services are fully insured, inspected, and maintained for you.</p>
+    </div>
+  </div>
+
+  <!-- Section 2 (Reverse) -->
+  <div class="row align-items-center mb-5 service-section flex-md-row-reverse" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+    <div class="col-md-6">
+      <img src="{% static 'img/air2.jpeg' %}" class="img-fluid service-img" alt="Hourly Charter" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Simplifying Airport Travel | Transportation Solutions by Columbia Transportation</h3>
+      <p>BWI, DCA, and IAD airports are extremely busy and can overwhelm even the most seasoned traveler. From long security lines to figuring out transportation to Arlington, Reston, or Bethesda, it's a never-ending battle. Imagine arriving late at night with no shuttle service to take you home or standing in line for overpriced taxis. At Columbia Transportation, we enter with our affordable Airport shuttle service to turn these common travel woes into seamless experiences. We turn the airport trip into an experience that is hassle-free and pleasurable.</p>
+      <p>Our Airport shuttle service is designed with your convenience in mind. We keep up-to-date with the real-time flight updates so that we don't miss you even when you get delayed. Headed to Dulles Tech Corridor or, Constitution Gardens, or catching a connecting flight at BWI? Use our Best airport shuttle service with professional chauffeurs who are well-versed in navigating traffic and making sure you never miss a beat.</p>
+      <p>Whether you're seeking solitude in our Luxurious airport limousines or traveling with others in our spacious motorcoaches, we have customized solutions to meet every need. Whether you are going for a family trip to Great Falls Park, or going to attend business appointments at The Ritz-Carlton, Washington D.C, you can always count on our Luxurious airport Sedan services for a comfortable and timely arrival.</p>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+    <div class="col-md-6">
+      <img src="{% static 'img/carj.jpg' %}" class="img-fluid service-img" alt="24/7 Limo Service" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Why Choose Columbia Transportation For Airport Transfer Service?</h3>
+      <p>Your travel experience should be smoothly run and memorable as your destination. It happens because at Columbia Transportation we excel ourselves to redefine all connotations of Airport transport in ways that have the real face of comfort, reliability, and professionalism.</p>
+      <p>With our fleet of Modern cars and Meticulously trained chauffeurs, we pride ourselves in offering the finest travel experience at Reasonable prices. From our advanced GPS tracking systems to punctilious vehicle maintenance, every detail is designed to keep you satisfied. So, stop looking for “Airport transportation near me”, because we cater to every need and pocket by offering everything from Mercedes luxury vans for large groups, Airport black car services for VIPs to Affordable shuttle services for the frequent travelers.</p>
+    </div>
+  </div>
+
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href="{% url 'reservation' %}" class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}

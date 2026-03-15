@@ -1,0 +1,38 @@
+from django.urls import path
+from .views import *
+from . import views
+
+urlpatterns = [
+    path("",index,name="index"),
+    path('blog/', views.blog, name='blog'),
+    path('about', views.about, name='about'),
+    path('service/', views.service, name='service'),
+    path('services/list', views.services_list, name='services_list'),
+    path('services/<slug:slug>/', views.service_detail, name='service_detail'),
+    path('feature/', views.feature, name='feature'),
+    path('team/', views.team, name='team'),
+    path('error/', views.error, name='404'),
+    path('cars/', views.cars, name='cars'),
+    path('van/', views.van, name='van'),
+    path('dca/', views.dca, name='dca'),
+    path('iad/', views.iad, name='iad'),
+    path('bachelor/', views.bachelor, name='bachelor'),
+    path('wine/', views.wine, name='wine'),
+    path('bus/', views.bus, name='bus'),
+    path('bwi/', views.bwi, name='bwi'),
+    path('phl/', views.phl, name='phl'),
+    path('exotic/', views.exotic, name='exotic'),
+    path('wedding/', views.wedding, name='wedding'),
+    path('hourly/', views.hourly, name='hourly'),
+    path('private/', views.private, name='private'),
+    path('group/', views.group, name='group'),
+    path('corporate/', views.corporate, name='corporate'),
+    path('contact/', views.contact, name='contact'),
+    path('testimonial/', views.testimonial, name='testimonial'),
+    path('reservation-success/', views.reservation_success, name='reservation_success'),
+    path('point-to-point/', views.point_to_point_service, name='point_to_point_service'),
+    path('airport_transportation/', views.airport_transportation, name='airport_transportation'),
+    path("reservation/", views.reservation, name="reservation"),
+    path("reservation/success/", views.reservation_success, name="reservation_success"),
+    path('fleet/', views.fleet, name='fleet'),
+]

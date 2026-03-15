@@ -1,0 +1,322 @@
+/* ======================= Modern Reservation Page CSS ======================= */
+
+.reservation-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #fdfdfd;
+  animation: fadeInPage 0.8s ease forwards;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  background: linear-gradient(90deg, #FFD140, #FFC700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  animation: floatText 2.5s ease-in-out infinite alternate;
+}
+
+.hero p {
+  color: #293039;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  animation: floatText 3s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatText {
+  from { transform: translateY(0);}
+  to { transform: translateY(-5px);}
+}
+
+.reservation-card {
+  background-color: #ffffff; 
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 0.5s ease forwards;
+}
+.reservation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+.section h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #293039;
+  border-bottom: 2px solid #FFD140;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+.field {
+  display: flex;
+  flex-direction: column;
+}
+.field label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #293039;
+}
+.field input,
+.field select,
+.field textarea {
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #FFD140;
+  box-shadow: 0 0 0 3px rgba(255, 209, 64, 0.2);
+  outline: none;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field.checkbox label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.stops {
+  margin-top: 1rem;
+}
+.stops-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stop-item {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  animation: fadeIn 0.3s ease forwards;
+}
+.stop-item input {
+  flex: 1;
+}
+.stop-item button.remove-stop {
+  background-color: #FFD140;
+  border: none;
+  color: #000;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.stop-item button.remove-stop:hover {
+  background-color: #FFC700;
+}
+
+.price-section {
+  margin: 1.5rem 0;
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #FFD140, #FFC700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: floatPrice 2s ease-in-out infinite alternate;
+}
+
+@keyframes floatPrice {
+  from { transform: translateY(0);}
+  to { transform: translateY(-4px);}
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.btn.primary {
+  background: linear-gradient(90deg, #FFD140, #FFC700);
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* ======================= PayPal Button Styling ======================= */
+#paypal-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+#paypal-button-container .paypal-button {
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+
+#paypal-button-container .paypal-button span {
+  font-weight: 700 !important;
+}
+
+/* Optional: match primary gradient look with hover effect */
+#paypal-button-container .paypal-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2) !important;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ======================= Card Details Styling ======================= */
+#cardDetails {
+  background-color: #ffffff;
+  padding: 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  margin-top: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInCard 0.5s ease forwards;
+}
+
+#cardDetails h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #293039;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #FFD140;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Card Icons */
+.card-icons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.card-icons i {
+  font-size: 2rem;
+  color: #ccc;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.card-icons i:hover {
+  color: #FFD140;
+  transform: scale(1.2);
+}
+
+/* Input fields */
+#cardDetails input {
+  width: 100%;
+  padding: 0.65rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+#cardDetails input:focus {
+  border-color: #FFD140;
+  box-shadow: 0 0 0 3px rgba(255, 209, 64, 0.2);
+  outline: none;
+}
+
+/* Inline fields for Expiry and CVV */
+.inline-fields {
+  display: flex;
+  gap: 1rem;
+}
+.inline-fields div {
+  flex: 1;
+}
+.inline-fields input {
+  width: 100%;
+}
+
+/* Submit / Pay Button */
+#cardDetails .btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(90deg, #FFD140, #FFC700);
+  color: #000;
+  font-weight: 700;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+#cardDetails .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .inline-fields {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  #cardDetails h4 {
+    font-size: 1.2rem;
+  }
+  .card-icons i {
+    font-size: 1.7rem;
+  }
+}
+

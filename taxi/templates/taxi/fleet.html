@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Our Fleet{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/fleet.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="fleet-section">
+    <h2>Our Fleet</h2>
+
+    <div class="category-filters">
+        <button class="filter-btn" data-category="">All</button>
+        {% for cat in categories %}
+        <button class="filter-btn" data-category="{{ cat.id }}">{{ cat.name }}</button>
+        {% endfor %}
+    </div>
+
+    <div class="fleet-grid">
+        {% for car in fleet_list %}
+        <div class="fleet-card" data-category="{{ car.category.id }}">
+            <!-- Only show main image -->
+            <img src="{{ car.main_image.url }}" class="fleet-main-img" 
+                 data-gallery="{% for img in car.images.all %}{{ img.image.url }} {% endfor %}" 
+                 alt="{{ car.name }}">
+
+            <h3>{{ car.name }} - {{ car.vehicle_class }}</h3>
+            <p>{{ car.description|truncatewords:20 }}</p>
+            <p>Passengers: {{ car.passengers }} | Luggage: {{ car.luggage }}</p>
+            <p>Price/Hour: ${{ car.price_per_hour }}</p>
+            <button class="book-now-btn" data-vehicle="{{ car.id }}">Book Now</button>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightboxModal" class="lightbox hidden">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-img" src="">
+    <button class="prev-lightbox">&#10094;</button>
+    <button class="next-lightbox">&#10095;</button>
+</div>
+
+<!-- Book Now Modal -->
+<div id="bookNowModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3>Book Vehicle</h3>
+        <form method="POST" action="{% url 'reservation' %}">
+            {% csrf_token %}
+            <input type="hidden" name="vehicle_id" id="modalVehicleId">
+            <label>First Name</label><input type="text" name="first_name" required>
+            <label>Last Name</label><input type="text" name="last_name" required>
+            <label>Email</label><input type="email" name="email" required>
+            <label>Phone</label><input type="text" name="phone" required>
+            <button type="submit">Submit Reservation</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/fleet.js' %}"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const mainImages = document.querySelectorAll(".fleet-main-img");
+    const lightbox = document.getElementById("lightboxModal");
+    const lightboxImg = lightbox.querySelector(".lightbox-img");
+    const closeBtn = lightbox.querySelector(".close-lightbox");
+    const prevBtn = lightbox.querySelector(".prev-lightbox");
+    const nextBtn = lightbox.querySelector(".next-lightbox");
+
+    let gallery = [];
+    let currentIndex = 0;
+
+    mainImages.forEach(img => {
+        img.addEventListener("click", () => {
+            gallery = img.dataset.gallery.trim().split(" ");
+            currentIndex = 0;
+            lightboxImg.src = gallery[currentIndex];
+            lightbox.classList.remove("hidden");
+        });
+    });
+
+    function showImage(index) {
+        currentIndex = (index + gallery.length) % gallery.length;
+        lightboxImg.src = gallery[currentIndex];
+    }
+
+    prevBtn.addEventListener("click", () => showImage(currentIndex - 1));
+    nextBtn.addEventListener("click", () => showImage(currentIndex + 1));
+    closeBtn.addEventListener("click", () => lightbox.classList.add("hidden"));
+    window.addEventListener("click", e => { if(e.target === lightbox) lightbox.classList.add("hidden"); });
+});
+</script>
+{% endblock %}

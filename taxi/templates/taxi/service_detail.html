@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center mb-4">{{ service.title }}</h1>
+    <img src="{{ service.image.url }}" class="img-fluid mb-4 rounded" alt="{{ service.title }}">
+    <p>{{ service.description }}</p>
+    <div class="mt-4">
+        <a href="{% url 'services_list' %}" class="btn btn-outline-dark">← Back to Services</a>
+    </div>
+</div>
+{% endblock %}

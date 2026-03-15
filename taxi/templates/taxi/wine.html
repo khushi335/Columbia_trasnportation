@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+  <!--<link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+  <!--<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/wine.jpeg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!-- <h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>
+    <p class="lead">Reliable. Comfortable. On Time.</p> -->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/wine2.jpeg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Make Your Trips Worthwhile with Columbia Transportation Group Transport</h3>
+      <p></p>
+      <p>Imagine walking into a world where the most stunning vineyards are paired with historic cityscapes, and your travel is as luxurious as your destination. With Columbia Transportation, your dream of visiting picturesque wineries and lively cities becomes a reality. Whether you're planning a tranquil retreat to rolling vineyards or a Sightseeing tour through iconic cities, or a night life tour, our Winery and City tours transportation is tailored to surpass your expectations.</p>
+      <p>Embark on an unforgettable journey through some of the region's most sought-after destinations. You can use our Best limo service for Baltimore tour to begin with a city tour that unfolds the historic charm of Washington, D.C., with its Lincoln Memorial, U.S. Capitol, and Smithsonian Museums</p>
+    </div>
+  </div>
+
+  <!-- Section 2 (Reverse) -->
+  <div class="row align-items-center mb-5 service-section flex-md-row-reverse" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+    <div class="col-md-6">
+      <img src="{% static 'img/wine2.jpeg' %}" class="img-fluid service-img" alt="Hourly Charter" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Looking For Exclusive Winery and City Tours Transportation Service?</h3>
+      <p>Now, head out into the countryside to discover the region's famous wineries using our Washington DC limo services. Treat your senses to a visit to the rustic charm of Boordy Vineyards in Maryland or the beautiful Stone Tower Winery in Virginia amidst rolling hills. For some history and innovation, try the award-winning Barboursville Vineyards, with centuries-old traditions and modern winemaking techniques coming together. Stop looking for “winery tours near you” and trust Columbia Transportation with your Winery and D.C. tours. Our Best winery tour transportation ensures you savor every sip.</p>
+      <p>Delve into the arts at the Kennedy Center or explore Georgetown's cobblestone streets and waterfront views. A short hop to Baltimore is full of vibrant Inner Harbor, lively markets, and charming neighborhoods. Every city offers a tapestry of culture, history, and modern attractions waiting to be explored. Whether you are going on a solo trip, or with a group of family or friends; we have got you covered. We offer our Luxurious sprinter vans for large parties and our Limousines, Sedans, or Black cars for smaller parties.</p>
+    </div>
+  </div>
+
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href=""{% url 'reservation' %} class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}

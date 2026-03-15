@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+<!--  <link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+<!--  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/cor.jpg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!-- <h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>
+    <p class="lead">Reliable. Comfortable. On Time.</p> -->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/cor1.jpeg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Elevate Corporate Travel with Columbia Transportation</h3>
+      <p>Each and every aspect of your personality matters in today’s fast-paced corporate world. Especially when it comes to transportation, everyone has a keen eye for your transport. At Columbia Transportation, we clearly understand the importance of reliable, and seamless Luxury private transportation. Our Corporate transportation services are tailored to meet all the requirements of your business. It ensures that the services are efficient, professional , and comfortable at every step.</p>
+      <p>Our top-of-the-line vehicles and seasoned chauffeurs are well geared to respond to your corporate transportation needs with precision and care. We offer Transportation for corporate events, not just at the Walter E. Washington Convention Center but also at the Ronald Reagan Building and International Trade Center or in Virginia at Tysons Corner, or at any other places of your choice. Our Hourly limo service further accommodate executive retreats held in luxury resorts like Salamander Resort & Spa located in Middleburg, Virginia, or board meetings taking place at iconic hotels like The Ritz-Carlton, Pentagon City. We offer smooth executive Airport transfers to major hubs such as BWI , IAD and DCA ensuring that business professionals have a hassle-free experience.</p>
+      <p>Besides corporate travel, Columbia Transportation offers a range of luxury transportation services. If you have to attend a wedding in style at The Four Seasons Hotel Washington D.C, you can rely on our Wedding transportation service in D.C. We are also offering corporate transportation in Baltimore for large groups. You can use our Van or shuttle service for travelling with groups to attend business events at The International Trade Center (ITC). We also cater to provide stylish solutions for the large groups by accommodating large groups in our spacious motorcoaches with comfort. Whatever your purpose, professionalism, reliability, and customer satisfaction will characterize a smooth and enjoyable experience worldwide.</p>
+    </div>
+  </div>
+  
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href="{% url 'reservation' %}" class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}

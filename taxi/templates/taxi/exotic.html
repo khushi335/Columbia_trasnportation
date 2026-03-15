@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+  <!--<link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+  <!--<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/exo.jpeg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!-- <h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>
+    <p class="lead">Reliable. Comfortable. On Time.</p> -->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/exo1.jpeg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Make a Lasting Impression with Columbia Transportation Exotic Car Rentals</h3>
+      <p>Imagine gliding through the iconic streets of Washington D.C, Virginia and Maryland in a Luxury black car sedan. The polished exterior catches the sunlight as you pull up to a high-profile meeting or an elegant gala, turning heads and leaving a lasting impression. Columbia Transportation Exotic and Luxury car rental service ensures every ride is an occasion, perfect for Corporate events, Airport transfers (BWI, DCA, IAD), or even a spontaneous Washington D.C. City tour. Whether it's a wedding, prom, or date night, our fleet of Rolls Royce, limousines, SUVs, and black car sedans ensures you arrive in elegance. Columbia Transportation Fleet includes luxurious vehicles that balance performance with elegance, ensuring both practicality and indulgence on every journey.</p>
+      <p>City Tours In Exotic Cars. Cruise through scenic routes, with the powerful engine humming beneath you and every passenger enjoying the spacious interiors and top-tier amenities. Do you love the scenic long drives through Bethesda or Annapolis in a stunning luxury car that demands attention. Whether it's a classy sedan for a family trip to D.C. or a high-performance model for a thrilling joyride, every detail-from soft leather interiors to superior sound systems-is designed to provide an elevated experience. Get to know Maryland's wonderful landscapes or arrive at Baltimore's Inner Harbor in style.</p>
+    </div>
+  </div>
+
+  <div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/exo2.jpeg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Perks of Columbia Transportation Exotic Car Rentals | Luxury, Style & Performance</h3>
+      <p>By booking Columbia Transportation, you will gain an entire world of perks toward satisfying your transportation needs. There is unparalleled convenience here; no parking headache, route planning, and other tedious worries. We will always keep our fleet at perfect conditions so you could always ride in ultimate style and comfort. Your quest for Luxury suv services and exotic car rentals comes to an end.</p>
+      <p>Travel the world in style with Columbia Transportation Exotic car rentals, providing top-of-the-line vehicles for any occasion. Whether you need Washington DC Exotic Car Rentals, or Virginia Luxury Car Rentals, we have options to suit your needs. From Maryland exotic car hire to Baltimore luxury vehicle rentals, our services are all about you. We know your need, worldwide reliability and personal support that makes every ride an unforgettable journey</p>
+    </div>
+  </div>
+  
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href="{% url 'reservation' %}" class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}

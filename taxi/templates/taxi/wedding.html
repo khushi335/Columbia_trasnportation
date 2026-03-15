@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+  <!--<link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+  <!--<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/wed.jpeg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!-- <h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>
+    <p class="lead">Reliable. Comfortable. On Time.</p> -->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/wed1.jpeg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Celebrate Your Big Day with Columbia Transportation’s Luxury Wedding Transport</h3>
+      <p>Your wedding day marks the beginning of a lifelong journey, filled with love, laughter, and cherished memories. We at Columbia Transportation value every little detail in perfecting your wedding special day. Enjoy arriving in style to Virginia's serene vineyards or Baltimore's urban elegance; or even the stunning Grandeur of Maryland waterfront venues along the Chesapeake Bay. Your Luxury wedding transportation will be as beautiful as your destination.</p>
+      <p>Imagine stepping out of a sleek limousine at the Sagamore Pendry Baltimoreor The Four Seasons Hotel Washington D.C, ready to make lifetime memories. Our chauffeurs are more than drivers, they are members of your wedding team, ensuring you arrive safely and on time. They go beyond just driving; to help with coordination, adjust last-minute changes, and ensure every ride is smooth and comfortable. You can therefore relax and focus on creating memories. The experienced chauffeurs arrive uniformly attired and courteous to handle your Wedding transportation in Baltimore with grace and precision. Each ride is smooth, safe, and filled with luxury, from picking up the bride and groom to transporting family and friends.</p>
+      <p>Your wedding day is bound to be nothing less than the best as our Premium wedding transportation service aims at making every moment unforgettable. For those dreaming of a luxurious entrance in an Elegant limousine on their big day, or Exotic cars, or the Luxurious edans. We have got you covered with our premium fleet which includes premium limousines, executive sedans, and the spacious SUVs. Trust us to deliver exceptional service that would match the delicate and special essence of your wedding day. Ride with us from your first ride up until the final farewell.</p>
+    </div>
+  </div>
+
+  <!-- Section 2 (Reverse) -->
+  <div class="row align-items-center mb-5 service-section flex-md-row-reverse" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+    <div class="col-md-6">
+      <img src="{% static 'img/wed3.jpeg' %}" class="img-fluid service-img" alt="Hourly Charter" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Let Us Make Every Mile of Your Wedding Magical With Our Versatile Fleet</h3>
+      <p>Our versatile Fleet caters to weddings of every scale. Whether it's an intimate gathering or a grand celebration, we have the perfect Wedding Transportation in DMV area for your needs.</p>
+      <p>Choosing Columbia Transportation comes with extraordinary benefits. Our vehicles provide Climate control, Comfortable seats, and Entertainment systems so that every journey becomes worthwhile and enjoyable. With our knowledgeable drivers, you can rest assured that every mile will be safe and stress-free. Whether you are planning to host an urban-chic event in Baltimore, have a serene waterfront wedding planned in Maryland, or looking to celebrate at a Virginia vineyard, we are sure to make your big day all the more elegant and convenient with your wedding transportation arrangements</p>
+      <p>Explore our fleet options and discover how we can enhance your wedding day with the perfect Wedding transportation services for every need.</p>
+    </div>
+  </div>
+
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href="{% url 'reservation' %}" class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}

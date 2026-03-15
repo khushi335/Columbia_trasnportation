@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Book a Ride{% endblock %}
+
+{% block extra_head %}
+<link href="{% static 'css/reservation.css' %}" rel="stylesheet">
+<link href="{% static 'css/reservation_card.css' %}" rel="stylesheet">
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+<main class="reservation-container">
+  <section class="hero">
+    <h2>Quick & Easy Reservation</h2>
+    <p>Book your ride in minutes. Round-trip and hourly options available.</p>
+  </section>
+
+  <form id="reservationForm" class="reservation-card" method="POST" novalidate>
+    {% csrf_token %}
+
+    <!-- Trip Details -->
+    <div class="section">
+      <h3>Trip Details</h3>
+      <div class="grid">
+        <div class="field">
+          <label>Service Type</label>
+          <select id="serviceType" name="service_type" required>
+            <option value="">Select Service Type</option>
+            <option value="point_to_point">Point to Point</option>
+            <option value="round_trip">Round Trip</option>
+            <option value="hourly">Hourly / As Directed</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Vehicle Class</label>
+          <select id="vehicleClass" name="vehicle_class" required>
+            <option value="">Select Vehicle Class</option>
+            <option value="sedan">Sedan</option>
+            <option value="suv">SUV</option>
+            <option value="van">Van</option>
+            <option value="luxury">Luxury</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Passengers</label>
+          <input type="number" id="passengers" name="passengers" min="1" max="14" required />
+        </div>
+        <div class="field">
+          <label>Luggage</label>
+          <input type="number" id="luggage" name="luggage" min="0" max="20" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Pickup & Dropoff -->
+    <div class="section">
+      <h3>Pickup & Dropoff</h3>
+      <div class="grid">
+        <div class="field full">
+          <label>Pickup Location</label>
+          <input type="text" id="pickup" name="pickup" placeholder="Address, airport, or landmark" required />
+        </div>
+        <div class="field full">
+          <label>Dropoff Location</label>
+          <input type="text" id="dropoff" name="dropoff" placeholder="Address, airport, or landmark" required />
+        </div>
+        <div class="field">
+          <label>Pickup Date</label>
+          <input type="date" id="pickupDate" name="pickup_date" required />
+        </div>
+        <div class="field">
+          <label>Pickup Time</label>
+          <input type="time" id="pickupTime" name="pickup_time" required />
+        </div>
+      </div>
+
+      <!-- Extra Stops -->
+      <div id="stopsContainer" class="stops">
+        <div class="stops-head">
+          <h4>Extra Stops (optional)</h4>
+          <button type="button" class="btn secondary" id="addStopBtn">+ Add Stop</button>
+        </div>
+        <div id="stopsList"></div>
+      </div>
+    </div>
+
+    <!-- Contact & Payment -->
+    <div class="section">
+      <h3>Contact & Payment</h3>
+      <div class="grid">
+        <div class="field">
+          <label>First Name</label>
+          <input type="text" id="firstName" name="first_name" required />
+        </div>
+        <div class="field">
+          <label>Last Name</label>
+          <input type="text" id="lastName" name="last_name" required />
+        </div>
+        <div class="field">
+          <label>Phone</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="field full">
+          <label>Payment Method</label>
+          <select id="paymentMethod" name="payment_method" required>
+            <option value="cash" selected>Pay Cash to Driver</option>
+            <option value="card">Card</option>
+            <option value="paypal">PayPal</option>
+          </select>
+        </div>
+        <div class="field checkbox full">
+          <label>
+            <input type="checkbox" id="terms" required /> I agree to the Terms of Service and Privacy Policy.
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card Details -->
+    <div id="cardDetails" style="display:none;">
+      <h4>Card Details</h4>
+      <div class="card-icons">
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-amex"></i>
+        <i class="fab fa-cc-discover"></i>
+      </div>
+      <label>Card Number</label>
+      <input type="text" id="cardNumber" name="card_number" placeholder="1234 1234 1234 1234" maxlength="19" />
+
+      <div class="inline-fields">
+        <div>
+          <label>Expiry</label>
+          <input type="text" name="card_expiry" placeholder="MM/YY" maxlength="5" />
+        </div>
+        <div>
+          <label>CVV</label>
+          <input type="text" name="card_cvv" placeholder="123" maxlength="4" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Price & Submit -->
+    <div class="price-section">
+      <h3>Total Price: $<span id="totalPrice">0.00</span></h3>
+    </div>
+    <div class="actions">
+      <button type="submit" class="btn primary" id="submitBtn">Submit Reservation</button>
+    </div>
+
+    <!-- PayPal Button -->
+    <div id="paypal-button-container" style="margin-top: 20px; display: none;"></div>
+    <div id="custom-paypal-btn" style="display: none; text-align:center; margin-top:20px;"></div>
+  </form>
+</main>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://www.paypal.com/sdk/js?client-id={{ paypal_client_id }}&currency=USD" data-sdk-integration-source="button-factory"></script>
+<script src="{% static 'js/reservation.js' %}" defer></script>
+{% endblock %}

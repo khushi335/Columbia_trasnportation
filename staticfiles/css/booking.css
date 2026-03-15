@@ -1,0 +1,103 @@
+/* --- General Form Styling --- */
+.bg-secondary {
+    background-color: #293039 !important;
+}
+
+input.form-control {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input.form-control:focus {
+    border-color: #997A80;
+    box-shadow: 0 0 5px rgba(153, 122, 128, 0.5);
+    outline: none;
+}
+
+.input-group .d-flex {
+    background-color: #f4f4f4;
+    border-right: 1px solid #ccc;
+}
+
+.input-group {
+    position: relative;
+}
+
+/* --- Autocomplete suggestion box --- */
+.suggestions-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: Arial, sans-serif;
+}
+
+/* Each suggestion item */
+.suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+/* Hover effect */
+.suggestion-item:hover {
+    background-color: #997A80;
+    color: #fff;
+}
+
+/* Active item for keyboard navigation */
+.active-suggestion {
+    background-color: #997A80;
+    color: #fff;
+    position: relative;
+}
+
+/* Arrow indicator for active suggestion */
+.active-suggestion::before {
+    content: "➤";
+    margin-right: 8px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* --- Optional: style the pick-up/drop-off link --- */
+a.text-start.d-block {
+    font-size: 0.9rem;
+    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+    text-decoration: underline;
+}
+
+a.text-start.d-block:hover {
+    color: #997A80;
+}
+
+/* --- Buttons --- */
+button.btn-light {
+    background-color: #997A80;
+    color: #fff;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+button.btn-light:hover {
+    background-color: #731211;
+    color: #fff;
+}

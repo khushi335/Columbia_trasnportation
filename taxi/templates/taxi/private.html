@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+  <!--<link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+  <!--<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/pri.jpeg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!-- <h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>
+    <p class="lead">Reliable. Comfortable. On Time.</p> -->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/pri2.jpeg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Top School Transportation: Columbia Transportation’s Safe Rides Tailored for Students</h3>
+      <p>Are you worried about your child’s safety on a local school bus? Columbia Transportation helps you cross over the DMV area by giving Private school transportation services that ensure safety, comfort, and punctuality of your child. We are specializing in the Private student transportation of America, offering Private school bus services tailored to the customer's needs. Our mission is to offer a seamless, stress-free before and after school shuttle service from Baltimore to Washington D.C, Virginia, Maryland and surrounding areas. For Baltimore private school transportation services, Columbia Transportation is the trusted choice for safe, reliable rides for your children</p>
+      <p>As a parent, ensuring your child's safety and security while traveling to and from school is paramount, and we understand the worries that come with it. With our reliable school bus transportation services, we do not only guarantee your child's safe journey but also provide peace of mind in safeguarding them from bullying and other threats. Our Professional chauffeurs are well trained to handle every situation with care and efficiency, ensuring that every journey is smooth and stress-free. Our Fleet of well-maintained vehicles ensures that school buses are fully equipped with modern safety features, spacious seating, and reliable performance, making sure that students have a safe and comfortable ride.</p>
+      <p>Learning and safety can go hand in hand with Columbia Transportation. Columbia Transportation school transportation services aim to provide safe pick-up and drop-off services from schools. We provide Maryland private school transportation, Baltimore private school bus service, as well as transportation to and from school in Howard county , Montgomery county and Potomac. We also offer safe and reliable solutions for Daycare pick-ups, after-school programs, and School-sponsored events. Whether these are the destinations-from daily daycare commutes or educational trips, like the Maryland Science Center.</p>
+    </div>
+  </div>
+
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href="{% url 'reservation' %}" class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+  <!--<link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+  <!--<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/van.jpeg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!-- <h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>
+    <p class="lead">Reliable. Comfortable. On Time.</p> -->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/van1.jpeg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Exhale Stress, Embrace Comfort: Trust Columbia Transportation</h3>
+      <p>To go to the bustling DMV area need not be anxiety riddled and time wasting anymore. Columbia Transportation offers Exclusive shuttle services and Sprinter Van services that redefine your travel experience. Whether you are a solo traveler, or a family coming over for a vacation, or just a group going into an important corporate event, all could benefit from our affordable shuttle service and seamless van services.</p>
+      <p>Our versatile Fleet features premium Suvs, Sedans, Vans, and Motorcoaches to cater to your every need, providing both comfort and efficiency. Each vehicle is regularly maintained to ensure your comfort, guaranteeing an effortless journey no matter what your destination or schedule is. We are serving major airports like BWI , IAD and DCA plus our services also extend to destinations across Washington D.C, Baltimore, Maryland, Virginia and beyond.</p>
+      <p>We are offering the premium Airport non-stop shuttle service to ensure a timely trip to or from the airport. We have some specialized options for all the major airports across the DMV area which includes BWI shuttle service, DCA shuttle service, or Dulles shuttle services to make your airport commutes comfortable. AirportShuttles4Less is well known in the area for offering the best Baltimore airport shuttle services at the best rates.</p>
+    </div>
+  </div>
+
+  <!-- Section 2 (Reverse) -->
+  <div class="row align-items-center mb-5 service-section flex-md-row-reverse" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+    <div class="col-md-6">
+      <img src="{% static 'img/van2.jpeg' %}" class="img-fluid service-img" alt="Hourly Charter" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Shuttle Services Designed for Everyday Travel and Beyond</h3>
+      <p>Columbia Transportation is your go-to Shuttle service provider in the DMV area. Get to BWI, DCA, or IAD with our efficient Airport shuttle service. Forget the rush hour traffic or parking yourself at the airport. Our experienced chauffeurs will pick and drop you on time.</p>
+      <p>But our services reach far beyond merely airport transfers. DMV locals depend on us for a lot of their transport needs. Got a group adventure planned to Capitol Hill? Then our Exclusive shuttle services are exactly what you'll need to hit all of D.C.'s iconic sights. Even if it's a dependably good ride to a countryside wedding venue in Virginia or out to a Loudoun County winery tour, we will make sure you're there in style and comfort by our 24/7 shuttle services.</p>
+      <p>Our Transportation services to sporting events at FedExField or Capital One Arena also help you bypass the chaos of parking. You can also use our Cheap shuttle services downtown to attend a Merriweather Post Pavilion or Wolf Trap concert with your friends. Let our drivers handle the driving so you can enjoy your night out with friends at the fullest. We handle corporate events downtown D.C. to School field trips and family reunions, we accommodate all sizes of groups with customized transportation solutions. We provide door-to-door service for small groups and organized travel for larger gatherings. Columbia Transportation prioritize comfort, reliability, and exceptional customer service.</p>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+    <div class="col-md-6">
+      <img src="{% static 'img/van3.jpeg' %}" class="img-fluid service-img" alt="24/7 Limo Service" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Seamless Group Travel with Our Van Services</h3>
+      <p>Traveling with a group has never been easier than with Columbia Transportation Sprinter Van services. Perfect for family reunions, Corporate retreats, or group outings. Our Sprinter Vans offer the ideal balance of comfort and space.our sprinter van services are equipped with all the modern amenities including sound systems, WiFi, luxurious interiors, comfortable seating and much more.</p>
+      <p>Whether you are looking to head to a game, concert, or maybe just out to visit somewhere nearby for the day, our Sprinter Van transport will get your whole crew there safely and comfortably, together. Our vans provide premium seating, entertainment options, and all the newest amenities so everyone in the group is kept entertained en route.</p>
+    </div>
+  </div>
+
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href="{% url 'reservation' %}" class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}

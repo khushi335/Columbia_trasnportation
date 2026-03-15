@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_head %}
+  <!-- Link to external CSS -->
+<!--  <link rel="stylesheet" href="{% static 'css/point_to_point.css' %}">-->
+
+  <!-- AOS Animate On Scroll CSS -->
+<!--  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />-->
+{% endblock %}
+
+{% block content %}
+
+<!-- ======= Top Banner ======= -->
+<div class="container-fluid p-0 position-relative">
+  <img src="{% static 'img/cara.jpg' %}" class="img-fluid w-100 banner-image" alt="Banner Image">
+  <div class="position-absolute top-50 start-50 translate-middle text-center text-white banner-text px-3">
+    <!--<h1 class="display-4 fw-bold">Point-to-Point Limo Service</h1>-->
+    <!--<p class="lead">Reliable. Comfortable. On Time.</p>-->
+  </div>
+</div>
+
+<!-- ======= Content Sections ======= -->
+<div class="container my-5">
+  <!-- Section 1 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800">
+    <div class="col-md-6">
+      <img src="{% static 'img/carb.jpg' %}" class="img-fluid service-img" alt="Airport Transfers" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Travel in Luxury &amp; Style with Columbia Transportation’s Point-to-Point Transport</h3>
+      <p>Want to find a convenient limo service or a Point-to-Point transport service? Then you are exactly at the right place. We offer you the Best point to point transportation services in the DMV. You can ride with style, comfort and elegance with Columbia Transportation Limo services. Our Fleet of Vehicles includes Full-size Sedans, Minivans, SUVs, Sprinter Vans, Buses, and Motor coaches.</p>
+      <p>Discover the beauty and charm of Baltimore, Washington D.C., Virginia and Maryland with our Premium point-to-point transportation services. Imagine gliding through historic streets like Fells Point, or CFG Bank Arena in Baltimore or arriving in style at the breathtaking National Mall in Washington DC, all while enjoying the luxury and comfort of our chauffeured limos...</p>
+      <p>We prioritize your safety first. The best part is we are 24/7 available for our users. Whether it is day or night time, just give us a Call to book your ride. We also offer last-minute or pre-scheduled rides. Our transportation services are fully insured, inspected, and maintained for you.</p>
+    </div>
+  </div>
+
+  <!-- Section 2 (Reverse) -->
+  <div class="row align-items-center mb-5 service-section flex-md-row-reverse" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+    <div class="col-md-6">
+      <img src="{% static 'img/carc.jpg' %}" class="img-fluid service-img" alt="Hourly Charter" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>Seamless Point-to-Point &amp; Corporate Transport | Book with Columbia Transportation</h3>
+      <p>The most hectic part of daily traveling is navigating traffic or parking issues. Now, you can get rid of these hassles from your daily life by using our Point-to-point transport services for your daily traveling. With our Corporate transportation services you get timely pickups and drop-offs in your corporate meetings at suitable prices.</p>
+      <p>Make a great impression by booking your business travels with our luxury limousines. Attend your meetings or conferences with confidence and style. You are going to leave a lasting impression on your colleagues and clients. Airport travel is stressful, especially from BWI, IAD and DCA airports here. No problem, we can assist you with our Airport limo services in pickup and handling your luggage.</p>
+      <p>Make Columbia Transportation your transportation partner in the DMV area and travel with comfort and confidence.</p>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="row align-items-center mb-5 service-section" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+    <div class="col-md-6">
+      <img src="{% static 'img/card.jpg' %}" class="img-fluid service-img" alt="24/7 Limo Service" loading="lazy" />
+    </div>
+    <div class="col-md-6">
+      <h3>24/7 Limo Service in DMV</h3>
+      <p>Columbia Transportation has simplified luxury transportation for you at competitive rates. We offer 24/7 Point-to-point limo services in Washington DC, Maryland, or Virginia. Now, elevate your traveling experience with Columbia Transportation, whether it's a quick commute, a grand celebration, or a business trip. Just Call us to book your ride (pre-scheduled or last-minute) or Request a free quote.</p>
+      <p>Be ready to experience elegance with style and comfort!</p>
+    </div>
+  </div>
+
+<!-- ======= Call to Action ======= -->
+<div class="container-fluid bg-light text-white text-center py-5">
+  <h2 class="mb-3">Book Your Ride Today</h2>
+  <a href="{% url 'reservation' %}" class="btn btn-light btn-reserve">Reserve Now</a>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+  <!-- AOS Animate On Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      once: true,
+      easing: 'ease-in-out',
+      duration: 700,
+    });
+  </script>
+{% endblock %}
