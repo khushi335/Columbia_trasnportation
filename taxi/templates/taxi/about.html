@@ -5,143 +5,114 @@
 
 {% block content %}
 <!-- About Start -->
-    <div class="container-fluid about-section py-2" style="background: #f8f9fa;">
-    <div class="container py-5">
+<section class="about-section py-5" style="background: #f8f9fa;">
+    <div class="container">
         <div class="row align-items-center g-5">
-
-            <!-- Text Content -->
             <div class="col-xl-6 text-center text-xl-start">
-                <h1 class="display-5 mb-4 text-gradient text-capitalize text-nowrap">Columbia Transportation</h1>
-                <p class="lead mb-4">
-                    Columbia Transportation is your trusted partner for airport transfers, private car services, and shuttle services across MD, DC, and VA. 
-                    Our professional drivers prioritize safety, comfort, and punctuality. With a fleet of modern, well-maintained vehicles, 
-                    we ensure your journey is seamless and stress-free. Whether it's a business trip, family travel, or special occasion, 
-                    we provide reliable and luxury transportation tailored to your needs. Your satisfaction is our greatest reward, and we continuously strive 
-                    to exceed your expectations.
+                <h1 class="display-5 mb-4 text-gradient fw-bold">Columbia Transportation</h1>
+                
+                <p class="lead mb-4 text-secondary">
+                    Columbia Transportation is your trusted partner for airport transfers, private car services, and shuttle services across MD, DC, and VA. Our professional drivers prioritize safety, comfort, and punctuality.
                 </p>
                 
-                <!-- Vision & Mission Cards -->
-                <div class="row g-4 mb-4">
+                <div class="row g-4 mb-5">
                     <div class="col-md-6">
-                        <div class="about-card p-4 h-100">
-                            <div class="about-icon mb-3">
-                                <img src="{% static 'img/about-icon-1.png' %}" class="img-fluid w-50" alt="Vision Icon">
-                            </div>
-                            <h5 class="mb-2 text-gradient">Our Vision</h5>
-                            <p>To provide our clients with safe, comfortable, and affordable transportation that enhances their travel experience and creates lasting memories.</p>
+                        <div class="about-card p-4 h-100 shadow-sm border-0">
+                            <div class="about-icon mb-3"><img src="{% static 'img/about-icon-1.png' %}" alt="Vision"></div>
+                            <h5 class="mb-2 text-dark">Our Vision</h5>
+                            <p class="small text-muted">To provide safe, comfortable, and affordable transportation that enhances your travel experience.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="about-card p-4 h-100">
-                            <div class="about-icon mb-3">
-                                <img src="{% static 'img/about-icon-2.png' %}" class="img-fluid w-50" alt="Mission Icon">
-                            </div>
-                            <h5 class="mb-2 text-gradient">Our Mission</h5>
-                            <p>To provide the best-in-class transportation services, combining professionalism, reliability, and exceptional customer support.</p>
+                        <div class="about-card p-4 h-100 shadow-sm border-0">
+                            <div class="about-icon mb-3"><img src="{% static 'img/about-icon-2.png' %}" alt="Mission"></div>
+                            <h5 class="mb-2 text-dark">Our Mission</h5>
+                            <p class="small text-muted">To provide best-in-class transportation services, combining professionalism, reliability, and support.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Stats & Button -->
-                <div class="row g-4 align-items-center justify-content-center">
-                    <div class="col-lg-4 text-center">
-                        <div class="stats-card text-center p-4 rounded">
-                            <h1 class="display-4 text-gradient mb-2">10</h1>
-                            <h5 class="text-white mb-0">Years of Experience</h5>
-                        </div>
+                <div class="d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-xl-start gap-4">
+                    <div class="stats-card p-3 px-4 rounded shadow-sm">
+                        <h2 class="h1 text-white mb-0">10+</h2>
+                        <span class="text-white small">Years Experience</span>
                     </div>
-                    <div class="col-lg-8 text-center text-xl-start">
-                        <a href="{% url 'contact' %}" class="btn btn-lg btn-gradient px-5 py-3 rounded-pill mt-3 mt-xl-0">(410) 365-5556</a>
-                    </div>
+                    <a href="{% url 'contact' %}" class="btn btn-lg btn-gradient px-5 py-3 rounded-pill">Call: (410) 365-5556</a>
                 </div>
             </div>
 
-            <!-- Image Content -->
             <div class="col-xl-6">
-                <div class="position-relative about-img">
-                    <img src="{% static 'img/hpe435-gm.jpg' %}" class="img-fluid rounded main-img" alt="About Image">
+                <div class="about-img shadow-lg rounded-20 overflow-hidden">
+                    <img src="{% static 'img/hpe435-gm.jpg' %}" class="img-fluid" alt="About Image">
                 </div>
             </div>
-
         </div>
     </div>
-</div>
+</section>
 <!-- About End -->
 <br>
 <!-- Features Start -->
-        <section class="features-section py-5">
+<section class="features-section py-5">
     <div class="container">
-        <!-- Heading -->
         <div class="text-center mb-5">
             <h1 class="display-5 fw-bold mb-3">Welcome to <span class="text-secondary">Columbia Transportation</span></h1>
             <p class="lead mx-auto" style="max-width: 900px;">
                 Columbia Limo and Bus provides premium airport transportation in MD, DC, and VA. 
-                Our professional drivers ensure safe, comfortable, and timely rides to BWI, DCA, and IAD airports. 
-                We specialize in airport shuttles, corporate travel, and private limo services for every occasion.
+                Our professional drivers ensure safe, comfortable, and timely rides to BWI, DCA, and IAD airports.
             </p>
         </div>
 
         <div class="row g-4 align-items-center">
-            <!-- Left Features -->
             <div class="col-lg-4">
-                <div class="feature-card d-flex align-items-start mb-4 p-4 rounded shadow-sm hover-effect">
-                    <div class="feature-icon bg-danger text-white rounded-circle me-3">
-                        <i class="fa fa-trophy fa-2x"></i>
+                <div class="feature-card p-4 rounded shadow-sm">
+                    <div class="feature-icon bg-danger text-white rounded-circle">
+                        <i class="fa fa-trophy"></i>
                     </div>
-                    <div>
+                    <div class="feature-content">
                         <h5 class="mb-2">Experienced Drivers</h5>
-                        <p class="mb-0">Our drivers know the local streets inside out and provide professional, courteous service every time.</p>
+                        <p class="mb-0">Our drivers know the local streets inside out and provide professional service.</p>
                     </div>
                 </div>
 
-                <div class="feature-card d-flex align-items-start mb-4 p-4 rounded shadow-sm hover-effect">
-                    <div class="feature-icon bg-secondary text-white rounded-circle me-3">
-                        <i class="fa fa-road fa-2x"></i>
+                <div class="feature-card p-4 rounded shadow-sm mt-4">
+                    <div class="feature-icon bg-secondary text-white rounded-circle">
+                        <i class="fa fa-road"></i>
                     </div>
-                    <div>
+                    <div class="feature-content">
                         <h5 class="mb-2">Friendly Service</h5>
                         <p class="mb-0">We prioritize a warm, hassle-free, and enjoyable experience for every passenger.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Center Vehicle Gallery -->
-<div class="col-lg-4 text-center">
-    <div class="vehicle-gallery">
-        <div class="gallery-track">
-            <div class="gallery-item">
-                <img src="{% static 'img/suv_limo_ext.jpg' %}" alt="Luxury SUV">
-            </div>
-            <div class="gallery-item">
-                <img src="{% static 'img/van.jpeg' %}" alt="Black Limousine">
-            </div>
-            <div class="gallery-item">
-                <img src="{% static 'img/van2.jpeg' %}" alt="Van Service">
-            </div>
-        </div>
-    </div>
-</div>
-
-
-            <!-- Right Features -->
             <div class="col-lg-4">
-                <div class="feature-card d-flex align-items-start mb-4 p-4 rounded shadow-sm hover-effect">
-                    <div class="feature-icon bg-success text-white rounded-circle me-3">
-                        <i class="fa fa-tag fa-2x"></i>
+                <div class="vehicle-gallery">
+                    <div class="gallery-track">
+                        <div class="gallery-item"><img src="{% static 'img/suv_limo_ext.jpg' %}" alt="Luxury SUV"></div>
+                        <div class="gallery-item"><img src="{% static 'img/van.jpeg' %}" alt="Black Limousine"></div>
+                        <div class="gallery-item"><img src="{% static 'img/van2.jpeg' %}" alt="Van Service"></div>
                     </div>
-                    <div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="feature-card p-4 rounded shadow-sm">
+                    <div class="feature-icon bg-success text-white rounded-circle">
+                        <i class="fa fa-tag"></i>
+                    </div>
+                    <div class="feature-content">
                         <h5 class="mb-2">Quality Standards</h5>
-                        <p class="mb-0">All vehicles are serviced regularly to maintain the highest standards of comfort and safety.</p>
+                        <p class="mb-0">All vehicles are serviced regularly to maintain the highest standards of safety.</p>
                     </div>
                 </div>
 
-                <div class="feature-card d-flex align-items-start mb-4 p-4 rounded shadow-sm hover-effect">
-                    <div class="feature-icon bg-danger text-white rounded-circle me-3">
-                        <i class="fa fa-map-pin fa-2x"></i>
+                <div class="feature-card p-4 rounded shadow-sm mt-4">
+                    <div class="feature-icon bg-danger text-white rounded-circle">
+                        <i class="fa fa-map-pin"></i>
                     </div>
-                    <div>
+                    <div class="feature-content">
                         <h5 class="mb-2">Advanced Technology</h5>
-                        <p class="mb-0">Our vehicles are GPS-equipped and can be booked online for a seamless and convenient experience.</p>
+                        <p class="mb-0">Our vehicles are GPS-equipped and can be booked online seamlessly.</p>
                     </div>
                 </div>
             </div>
